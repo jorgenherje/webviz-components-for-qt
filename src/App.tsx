@@ -1,7 +1,6 @@
 import './App.css'
 
 import {GroupTree} from '@webviz/subsurface-components';
-
 import exampleData from "../Test Data/group-tree.json";
 
 const edge_options = [
@@ -21,6 +20,8 @@ function App() {
   return (
     <>
       <div>
+        <h1>Vite + React</h1>
+        <h2>Group Tree Component from webviz-subsurface-components:</h2>
         <GroupTree id="this-is-a-test-id" data={exampleData} edge_options={edge_options} node_options={node_options}/>      
       </div>      
     </>
