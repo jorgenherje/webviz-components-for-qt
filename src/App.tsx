@@ -1,29 +1,28 @@
+import { useState } from 'react'
+import reactLogo from '../public/react.svg'
+import viteLogo from '../public/vite.svg'
 import './App.css'
 
-import {GroupTree} from '@webviz/subsurface-components';
-import exampleData from "../Test Data/group-tree.json";
-
-const edge_options = [
-  { name: "waterrate", label: "Water Rate", unit: "m3/s" },
-  { name: "oilrate", label: "Oil Rate", unit: "m3/s" },
-  { name: "gasrate", label: "Gas Rate", unit: "m3/s" },
-  { name: "waterinjrate", label: "Water Injection Rate", unit: "m3/s" },
-  { name: "gasinjrate", label: "Gas Injection Rate", unit: "m3/s" },
-];
-
-const node_options = [
-  { name: "pressure", label: "Pressure", unit: "Bar" },
-  { name: "bhp", label: "Bottom Hole Pressure", unit: "N/m2" },
-];
-
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
     <>
       <div>
+        <div>
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </div>
         <h1>Vite + React</h1>
-        <h2>Group Tree Component from webviz-subsurface-components:</h2>
-        <GroupTree id="this-is-a-test-id" data={exampleData} edge_options={edge_options} node_options={node_options}/>      
-      </div>      
+        <div className="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+          <p>
+            Push the button to increment the count.
+          </p>
+        </div>
+      </div>
     </>
   )
 }
